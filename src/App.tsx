@@ -48,7 +48,7 @@ function ObjectDetection() {
 
     // Clear previous result
     ctx.clear();
-    ctx.invalidate();
+    await ctx.invalidate();
 
     // Detect objects in image
     const results = await detectObjects(model, image);
@@ -93,7 +93,7 @@ function ObjectDetection() {
     return (
       <View style={styles.loading}>
         <ActivityIndicator size="small" color="tomato" />
-        <Text style={styles.loadingText}>Loading Distilbert Model</Text>
+        <Text style={styles.loadingText}>Loading YOLOv5 Model</Text>
         <Text>~28.1 MB</Text>
       </View>
     )
@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
   },
   loading: {
     alignItems: 'center',
+    backgroundColor: 'white',
     bottom: 0,
     justifyContent: 'center',
     left: 0,

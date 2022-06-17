@@ -61,16 +61,14 @@ export async function detectObjects(model: Module, image: Image) {
     // BEGIN: Capture performance measure for inference
     const startInferencTime = global.performance.now();
     // Run ML inference
-    const output = await model.forward(tensor);
+    const output = await model.forward<Tensor, Tensor[]>(tensor);
     // END: Capture performance measure for inference
     const inferenceTime = global.performance.now() - startInferencTime;
 
     // BEGIN: Capture performance measure for postprocessing
     const startUnpackTime = global.performance.now();
-    // Note: The toTuple API is likely going to change
-    const tuple = output.toTuple();
     // Note: The toTensor API is likely going to change
-    const prediction = tuple[0].toTensor();
+    const prediction = output[0];
     // Get image width/height to adjust bounds returned by model to image size
     const imageWidth = image.getWidth();
     const imageHeight = image.getHeight();
@@ -92,7 +90,7 @@ export async function detectObjects(model: Module, image: Image) {
 
     return results;
   }
-  catch (error) {
+  catch (error: any) {
     Alert.alert('Error', error);
   }
   return [];
@@ -127,7 +125,7 @@ function outputsToNMSPredictions(
   for (let i = 0; i < rows; i++) {
     // Access tensor data
     // Note: The data API does not exist in PyTorch Python and can change
-    const outputs = prediction[i].data;
+    const outputs = prediction[i].data();
     // Filter detections lower than the thresold
     if (outputs[4] > threshold) {
       // Get object bounds
