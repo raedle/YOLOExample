@@ -14,7 +14,7 @@
     "@react-native/assets": "^1.0.0",
     "react": "17.0.1",
     "react-native": "0.64.3",
-    "react-native-pytorch-core": "^0.2.0-rc.1",
+    "react-native-pytorch-core": "^0.2.0",
     "react-native-safe-area-context": "^3.2.0"
   },
   "devDependencies": {

@@ -5636,10 +5636,10 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-pytorch-core@^0.2.0-rc.1:
-  version "0.2.0-rc.1"
-  resolved "https://registry.yarnpkg.com/react-native-pytorch-core/-/react-native-pytorch-core-0.2.0-rc.1.tgz#747339848f31f88ba3c59db2d7c7b9b602fb1ae1"
-  integrity sha512-Kczz+vnDoKJtXyVk046lDF2ZgRaFd0qC/wfha9SpvBh0OmK+9RMWdUUMJTp+NPGaJz9X0SjfX0hNNFoTOtpzig==
+react-native-pytorch-core@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-pytorch-core/-/react-native-pytorch-core-0.2.0.tgz#b2fef56be17ad3c279310d4c341c675366071bb1"
+  integrity sha512-P/ojO37Z7KCGyAOcKZsOrClo1jJzoE2nM0QLNCRGNLW/g73ff3gJdtFLWv9VX2pnS3IF2K9+34Ds4m/A8Fk9fQ==
 
 react-native-safe-area-context@^3.2.0:
   version "3.2.0"

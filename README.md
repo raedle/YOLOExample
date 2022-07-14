@@ -9,7 +9,7 @@ The repository contains code for a [PyTorch Live](https://pytorch.org/live) obje
 The project was bootstrapped with the following command:
 
 ```
-npx torchlive-cli@nightly init YOLOExample --template react-native-template-pytorch-live@nightly
+npx torchlive-cli init YOLOExample --template react-native-template-pytorch-live
 ```
 
 Unused packages were removed and `react-native` upgraded to version `0.64.3`.
